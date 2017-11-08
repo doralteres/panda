@@ -7,7 +7,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty32"
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
-    v.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
     v.customize ["modifyvm", :id, "--nictype2", "Am79C973"]
   end
   
