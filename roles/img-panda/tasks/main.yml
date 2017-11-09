@@ -1,0 +1,12 @@
+---
+- name: copy img-panda
+  copy: src=img-panda dest=/tmp/ owner=root group=root mode=0755
+
+- name: Install pm2
+  npm: name=pm2 global=yes production=yes
+
+- name: npm install
+  npm: path=/tmp/img-panda
+
+- name: start img-panda service
+  command: pm2 start /tmp/img-panda/img-panda.js -n img-panda

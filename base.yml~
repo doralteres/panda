@@ -11,4 +11,4 @@
   become: yes
   roles:
     - { role: nodejs, tags: nodejs }
-    - { role: img-panda, tags: img-panda }
+    - { role: bamboo, tags: bamboo }

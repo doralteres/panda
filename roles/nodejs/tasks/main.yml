@@ -6,3 +6,9 @@
     - nodejs
     - npm
 
+- name: Adding node to os_path
+  become: yes
+  file:
+    src: /usr/bin/nodejs
+    dest: /usr/bin/node
+    state: link
