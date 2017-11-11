@@ -1,0 +1,9 @@
+{
+  "name": "img-panda",
+  "version": "1.0.0",
+  "description": "first tranning service",
+  "main": "img-panda.js",
+  "dependencies": {
+    "httpdispatcher": "^1.0.0"
+  }
+}
