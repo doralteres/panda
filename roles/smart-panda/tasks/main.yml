@@ -1,0 +1,16 @@
+---
+- name: copy smart-panda
+  copy: src=smart-panda dest=/tmp/ owner=root group=root mode=0755
+
+- name: Install pm2
+  npm: name=pm2 global=yes production=yes
+
+- name: npm install
+  npm: path=/tmp/smart-panda
+
+- name: Stopping old versions of smart-panda
+  command: pm2 stop smart-panda
+  ignore_errors: yes
+
+- name: Start smart-panda service
+  command: pm2 start /tmp/smart-panda/smart-panda.js -n smart-panda

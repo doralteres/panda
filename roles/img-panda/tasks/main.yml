@@ -8,5 +8,9 @@
 - name: npm install
   npm: path=/tmp/img-panda
 
+- name: Stopping old versions of img-panda
+  command: pm2 stop img-panda
+  ignore_errors: yes
+
 - name: start img-panda service
   command: pm2 start /tmp/img-panda/img-panda.js -n img-panda
